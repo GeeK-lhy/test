@@ -1,0 +1,27 @@
+springboot 对springmvc的支持
+
+1、如何修改springboot的默认配置
+ springboor在自动配置很多组件的时候，先看容器中有没有用户自己配制的（@Bean、@Component）如果有就用用户配置的，如果没有才自动配置。如果有些组件可以有多个(ViewResolver)将用户配置的和自己默认的组合起来
+2、扩展springmvc
+	编写一个配置类（@Configuration）是WebMvcConfigur
+
+
+3、@SpringBootCinfiguration:springboot的配置类，标注在某个类上，表示这是一个springboot的配置类
+ @EnableAutoConfiguration开启自动配置功能.
+	@AutoConfigurationPackage：自动配置包
+		@import(AutoConfigutationPackages.Registrar.class)
+			Spring底层注解@import给容器中导入一个组件，导入的组件由			AutoConfigurationPackages.Registrat.class；
+	将主配置类（@SpringBootApplication标注的类）的所在包以及下面所有子包里面的组件	  	                扫描到spring容器
+	@Import(EnableAutoConfiguratopnImportSelecctor.class)
+	EnableAutoConfiguratopnImportSelecctor导入哪些组建的选择器。将所有需要导入的组件以全类名	的方式返回，这些组件就会被添加到组件中。
+4、pom文件导入的插件在	http://localhost:8080/webjars/jquery/3.4.1/jquery.js访问
+5、静态资源的：	classpath:/META-INF/resources/
+	   	classpath:resources/
+		classpath:/startic/
+		classpath:/public/
+		访问时http://localhost:8080/jquery/3.4.1/jquery.js
+	html中导入今天文件不加static
+		所有的**/favicon。ico都是在静态资源文件夹下找
+、
+<plugin>插件，作为开发/编译/打包时的辅助工具，一般不会打包进项目中
+<dependency>代码编译运行时所需要的东西，项目打包后这些东西基本都在
