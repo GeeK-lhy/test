@@ -1,5 +1,5 @@
 springboot 对springmvc的支持
-
+11111111111111111111111111
 1、如何修改springboot的默认配置
  springboor在自动配置很多组件的时候，先看容器中有没有用户自己配制的（@Bean、@Component）如果有就用用户配置的，如果没有才自动配置。如果有些组件可以有多个(ViewResolver)将用户配置的和自己默认的组合起来
 2、扩展springmvc
